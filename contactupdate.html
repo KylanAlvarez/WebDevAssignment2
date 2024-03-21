@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Meown</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+        .contact-info {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<section class="contact-info">
+    <h1>Contact Us</h1>
+    <p><strong>Email Address:</strong> hello@meownblog.com</p>
+    <p><strong>Mailing Address:</strong> 456 Purr Lane, Meowtown, CAT 12345</p>
+    <p><strong>Phone Number:</strong> +1 (555) 123-4567</p>
+    <button id="backButton">Back to Blog</button>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#backButton').click(function() {
+            window.location.href = '../blog/index.html'; // Adjust the path if necessary
+        });
+    });
+</script>
+</body>
+</html>

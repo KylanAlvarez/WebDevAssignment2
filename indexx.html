@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery UI Components Demo</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .draggable, .resizable, .selectable-item, .accordion-section, .date-picker, .slider, .color-animation, #droppable, #show-hide, #explode, #fade, #color-animation {
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .draggable, .resizable, .selectable-item, #droppable {
+            border: 1px solid #ccc;
+        }
+        .droppable {
+            width: 150px;
+            height: 150px;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 150px;
+            text-align: center;
+        }
+        .resizable {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+        }
+        .selectable-item {
+            background-color: #f9f9f9;
+            cursor: pointer;
+        }
+        #selectable .ui-selecting {
+            background: #FECA40;
+        }
+        #selectable .ui-selected {
+            background: #F39814;
+            color: white;
+        }
+        #accordion .ui-accordion-header {
+            background-color: #e9ecef;
+            border: 1px solid #ddd;
+        }
+        #accordion .ui-accordion-content {
+            border: 1px solid #ddd;
+        }
+        #autocomplete {
+            width: 200px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        #date-picker {
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+        .slider {
+            margin-top: 20px;
+        }
+        #show-hide, #explode, #fade, #color-animation {
+            background-color: #d1ecf1;
+            border-color: #bee5eb;
+            cursor: pointer;
+            text-align: center;
+        }
+        .color-animation {
+            background-color: #d1ecf1;
+            transition: background-color 1s ease;
+        }
+    </style>
+</head>
+<body>
+
+<div id="draggable" class="draggable">Drag me</div>
+<div id="droppable" class="droppable">Drop here</div>
+<div id="resizable" class="resizable">Resize me</div>
+<ol id="selectable">
+    <li class="selectable-item">Item 1</li>
+    <li class="selectable-item">Item 2</li>
+    <li class="selectable-item">Item 3</li>
+</ol>
+
+<div id="accordion">
+    <h3>Section 1</h3>
+    <div><p>Accordion Content 1</p></div>
+    <h3>Section 2</h3>
+    <div><p>Accordion Content 2</p></div>
+</div>
+
+<input id="autocomplete">
+<div id="date-picker"></div>
+<div id="slider"></div>
+<div id="show-hide">Click to Show/Hide</div>
+<div id="explode">Click to Explode</div>
+<div id="fade">Click to Fade</div>
+<div id="color-animation">Click to Animate Color</div>
+
+<script>
+    $(function() {
+        $("#draggable").draggable();
+        $("#droppable").droppable({
+            drop: function(event, ui) {
+                $(this).addClass("ui-state-highlight").find("p").html("Dropped!");
+            }
+        });
+        $("#resizable").resizable();
+        $("#selectable").selectable();
+        $("#accordion").accordion();
+        var availableTags = ["ActionScript", "AppleScript", "Asp", "BASIC", "C", "C++", "Clojure", "COBOL", "ColdFusion", "
