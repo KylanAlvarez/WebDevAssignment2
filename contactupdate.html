@@ -10,10 +10,16 @@
             padding: 20px;
             margin: 0;
         }
-        .contact-info {
+        .contact-info, .map-container {
             max-width: 600px;
             margin: auto;
             padding: 20px;
+            margin-bottom: 20px;
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 400px; /* Adjust height as needed */
+            border: none;
         }
         button {
             padding: 10px 15px;
@@ -37,6 +43,10 @@
     <p><strong>Phone Number:</strong> +1 (555) 123-4567</p>
     <button id="backButton">Back to Blog</button>
 </section>
+
+<div class="map-container">
+    <iframe src="YOUR_GOOGLE_MAPS_EMBED_URL_HERE" allowfullscreen="" loading="lazy"></iframe>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
